@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ImageGalleryApp.Views.MainWindow"
+        Title="Gallery"
+        Width="1000"
+        Height="750">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto"
+          Margin="15">
+
+        <!-- Поле введення папок -->
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Spacing="10">
+
+            <TextBox x:Name="FolderTextBox"
+                     Watermark="Введіть шляхи до папок через @"
+                     HorizontalAlignment="Stretch"
+                     Width="750"/>
+
+            <Button Content="Load"
+                    Width="100"
+                    Click="Load_Click"/>
+        </StackPanel>
+
+        <!-- Статус -->
+        <TextBlock x:Name="StatusText"
+                   Grid.Row="1"
+                   Margin="0,10"
+                   Text="Введіть папки та натисніть Load"/>
+
+        <!-- Область відображення зображення -->
+        <Border Grid.Row="2"
+                Background="#222222"
+                CornerRadius="8"
+                Padding="10">
+
+            <Image x:Name="PreviewImage"
+                   Stretch="Uniform"/>
+        </Border>
+
+        <!-- Інформація та кнопки -->
+        <StackPanel Grid.Row="3"
+                    Spacing="10"
+                    Margin="0,10,0,0">
+
+            <TextBlock x:Name="ImageInfoText"
+                       Text="Інформація про зображення"
+                       TextWrapping="Wrap"
+                       FontSize="14"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Spacing="20">
+
+                <Button Content="Previous"
+                        Width="120"
+                        Click="Previous_Click"/>
+
+                <Button Content="Next"
+                        Width="120"
+                        Click="Next_Click"/>
+
+                <Button Content="CloseProgram"
+                        Width="140"
+                        Click="CloseProgram_Click"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
